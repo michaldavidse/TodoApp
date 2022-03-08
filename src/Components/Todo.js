@@ -13,9 +13,10 @@ const ToDo = ({ todo, handleToggle, deleteToDo }) => {
 
 
     return (
-        <div className="todoItem"> 
+        <div className={"todoItem"}> 
         <span className={todo.complete ? "completed" : ""} onClick={onClickComplete} id={todo.id} > 
-       {todo.task} <i className={todo.complete ? "fa-regular fa-circle-check" : "fa-regular fa-circle" } ></i></span>
+        <i className={todo.categorie +' '+ (todo.complete ? "fa-solid fa-circle-check" : "fa-regular fa-circle" )} ></i>
+         {todo.task} </span>
        </div> 
      
     );

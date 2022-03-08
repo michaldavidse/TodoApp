@@ -1,11 +1,11 @@
-
+/*Algemeen */
 .App {
     font-family: 'Raleway', sans-serif;
     font-size: 24px;
     display: block;
-    width: 400px;
+    width: 80%;
     margin: 10px auto 100px;
-    background-color: #ffffff;
+    background-color: #FFFFFF;
     color: #000000;
     padding: 0px 10px 10px 10px;
     border: 0.5px solid #dadada ;
@@ -19,82 +19,21 @@ h1 {
     text-align: center;
 }
 
-button {
+button, select {
     color: black;
-    background-color: #08FFC8;
+    background-color: #FFF7F7;
     padding: 10px;
-    margin:  0px 20px 0px 0px ;
-    border: 1px solid #08FFC8;
+    margin:  5px 20px 5px 10px ;
+    border: 1px solid #dadada;
     border-radius: 6px;
 }
 
-button:hover {
+button:hover, select:hover {
     /*position: relative;*/
     cursor: pointer;
     background-color:#dadada ;
     color: black;
 }
-
-
-
-.todoForm {
-    display: block;
-    position: relative;
-    padding: 10px 0 10px 40px
-}
-
-    .todoForm input {
-        width: 70%;
-        font-size: 18px;
-        line-height: 18px;
-        height: 20px;
-        padding: 10px;
-        border: 1px solid #08FFC8;
-        border-radius: 6px;
-        color: #888;
-    }
-
-    .todoForm button {
-        color: black;
-        background-color: #08FFC8;
-        width: 40px;
-        height: 40px;
-        padding: 5px;
-        margin:  0px 20px 0px 0px ;
-        position: absolute;
-        right: 5px;
-        border: 1px solid #08FFC8;
-        border-radius: 6px;
-    }
-
-    .todoForm button:hover {
-        /*position: relative;*/
-        cursor: pointer;
-        background-color:#dadada ;
-        color: black;
-    }
-
-
-.todoList li {
-   display: block ;
-   position: relative; 
-   height: 30px;
-   padding: 10px 0 10px 0px;
-   margin:  0px 20px 0px 0px ;
-
-}
-
-.todoList li:hover {
-        cursor: pointer;
-        background-color: #FFF7F7;
-        border-radius: 6px;
-    }
-
-.todoItem span i{
-    position: absolute;
-    right: 15px;
-   }
-
 
 footer {
     bottom: 0%;
@@ -105,28 +44,116 @@ footer {
 
 }
 
-.hidden{
-    display:none;
-}
-
-.visible{
-    display: inline-block;
-}
 
 
-#errorMessage{
-    font-size: 15px;
-    font-style: italic;
-    color: #204969;
+
+/* Form */
+.todoForm {
+    display: block;
+    position: relative;
+    padding: 10px 0 10px 40px;
+    height: 80px;
 
 }
 
-.completed{
+    .todoForm input {
+        width: 70%;
+        font-size: 18px;
+        line-height: 18px;
+        height: 20px;
+        padding: 10px;
+        border: 1px solid #dadada;
+        border-radius: 6px;
+        color: #888;
+    }
+
+    .todoForm button {
+        width: 40px;
+        height: 40px;
+        padding: 5px;
+        position: absolute;
+        right: 5px;
+        border-radius: 6px;
+
+    }
+
+    .todoForm button:hover {
+        /*position: relative;*/
+        cursor: pointer;
+        background-color:#dadada ;
+        color: black;
+    }
+
+    #errorMessage{
+        font-size: 15px;
+        font-style: italic;
+        color: #204969;
+        margin: 0px;
+        padding: 0px;;
+    
+    }
+
+    .hidden{
+        display:none;
+    }
+    
+    .visible{
+        display: block;
+    }
+    
+    
+
+/*ToDo lijst*/
+.todoList{
+    width: 85%;
+    height: 80%;
+    margin: 5%;
+    background-color: #ffffff;
+    border: 0.5px solid #dadada ;
+    border-radius: 10px;
+    box-shadow: 2px 2px #dadada;
+}
+.todoList li {
+   display: block ;
+   position: relative; 
+   height: 30px;
+   padding: 10px 0 10px 0px;
+   margin:  0px 20px 0px 0px ;
+   text-transform: capitalize;
+
+}
+
+.todoList li:hover {
+        cursor: pointer;
+        background-color: #FFF7F7;
+        border-radius: 6px;
+    }
+
+.todoItem span i{
+    font-size: 20px;
+    position: absolute;
+    left: 0px;
+    bottom: 17px;
+   }
+.todoItem span{
+    margin-left:25px;
+}
+
+   .completed{
     text-decoration: line-through;
     text-decoration-thickness: 1px;
     color: #204969;
 }
 
+.privé{
+    color:#08FFC8;
+}
+
+.werk{
+    color:#204969;
+}
+
+   /* Filter*/
 .filters{
     position: relative;
     text-align: center;
@@ -136,3 +163,70 @@ footer {
     display: inline-block;
     margin: 5px;
 }
+
+ /* Categorie*/
+ .categories{
+     position: relative;
+     width: 85%;
+     margin-left: 5%;
+     padding: 3px;
+
+     font-size: 18px;
+     
+ }
+
+ .categorie{
+     position: relative;
+     display: inline-block;
+     width: 40%;
+     height: 30%;
+     margin: 5% 5% 5% 0% ;
+     padding: 5% 2% 5% 2% ;
+     border: 0.5px solid #dadada ;
+     border-radius: 10px;
+     color: black; 
+     background-color:#FFFfff;
+     box-shadow: 2px 2px #dadada;
+ }
+
+ .categorie:hover {
+     background-color: #FFF7F7;
+     cursor: pointer;
+
+
+ }
+
+ .categorie h2{
+    display: inline-block;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: lighter;
+ }
+
+ .count{
+     margin: 0px;
+     padding: 0px 5px 0px 5px;
+     font-size: 26px;
+
+ }
+
+ .progressBar{
+     height: 5px;
+     border: 0.5px solid #dadada ;
+     border-radius: 10px;
+    
+ }
+
+ .progressBarprivé{
+    height: inherit;
+    background-color: #08FFC8;
+    border-radius: 10px;
+ }
+
+ .progressBarwerk{
+    height: inherit;
+    background-color: #204969;
+    border-radius: 10px;
+ }
+
+

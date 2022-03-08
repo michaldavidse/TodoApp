@@ -13,25 +13,27 @@ function App() {
             "id": 1,
             "task": "boodschappen",
             "complete": true,
-            "person": "John"
+            "categorie": "privé"
         },
         {
             "id": 2,
             "task": "kuisen gelijkvloers",
             "complete": true,
-            "person": "John"
+            "categorie": "werk"
         },
         {
             "id": 3,
             "task": "oprommelen berging",
             "complete": false,
-            "person": "John"
+            "categorie": "werk"
         },];
 
     const [toDoList, setToDoList] = useState(data);
 
-    function addTask(userInput){
-        var newTask = { id: toDoList.length + 1, task: userInput, complete: false };
+    const show="all";
+
+    function addTask(userInput, categorie){
+        var newTask = { id: toDoList.length + 1, task: userInput, complete: false, categorie: categorie };
         setToDoList([...toDoList, newTask]);
        }
     
@@ -51,13 +53,28 @@ function App() {
           setToDoList(todoListCopy); 
     }
 
-    function show(filter){
-        console.log(filter);
+    function count(categorie){
+        let array = [...toDoList].filter(todo => todo.categorie == categorie);
+        let arrayCategorieTotal = array.length;
+        let arrayCategorieToDo = array.filter(todo=> !todo.complete).length;
+        console.log(arrayCategorieToDo);
+        return [arrayCategorieToDo,arrayCategorieTotal];
+    }
+
+    function showItems(categorie){
+        if(categorie !==''){
+            let array =[...toDoList].filter(todo => {
+                return todo.categorie===categorie
+            });
+            setToDoList(array);
+        }
+        else{
+            setToDoList(toDoList)
+        }
+        
     }
 
 
-
-    
 
 
 
@@ -69,7 +86,7 @@ function App() {
 
      
 
-          <ToDoList toDoList={toDoList} handleToggle={handleToggle} deleteToDo={deleteToDo} show={show}/>
+          <ToDoList toDoList={toDoList} handleToggle={handleToggle} deleteToDo={deleteToDo} showItems={showItems} count={count}/>
          
 
 

@@ -1,9 +1,8 @@
 import React from 'react';
 import ToDo from './Todo';
-import Filter from './Filter';
+import Categorie from './Categorie';
 
-
-function ToDoList({ toDoList, handleToggle, deleteToDo, show }) {
+function ToDoList({ toDoList, handleToggle, deleteToDo, count, showItems}) {
     var list = toDoList.map(todo => {
         return (
             <li key={todo.id}>
@@ -11,11 +10,13 @@ function ToDoList({ toDoList, handleToggle, deleteToDo, show }) {
             </li>
         )
     });
+
+    
     return (
         <div>
-            <div className='filters'><Filter name="alles" onClick={show("alles")} />
-                <Filter name="Te doen" onClick={show("todo")} />
-                <Filter name="Done" onClick={show("done")} />
+            <div className="categories">
+                <Categorie name="privé" count={count} showItems={showItems}/>
+                <Categorie name="werk" count={count} showItems={showItems}/>
             </div>
 
 
@@ -23,11 +24,13 @@ function ToDoList({ toDoList, handleToggle, deleteToDo, show }) {
                 <ul>
                     {list}
                 </ul>
-            </div>
 
-            <div>
+                <div>
                 <button onClick={deleteToDo}>Lijstje opkuisen</button>
             </div>
+            </div>
+
+           
         </div>
     );
 };
