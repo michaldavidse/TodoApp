@@ -1,15 +1,11 @@
 import React from 'react';
 
-const ToDo = ({ todo, handleToggle, deleteToDo }) => {
+const ToDo = ({ todo, handleToggle }) => {
 
     function onClickComplete (event){
-        console.log(event.currentTarget.parentNode.id)
         handleToggle(event.currentTarget.id);
     }
 
-    function onClickDelete(event){
-        deleteToDo(event.currentTarget.parentNode.parentNode.id);
-    }
 
 
     return (

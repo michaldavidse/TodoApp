@@ -1,28 +1,18 @@
 import React from 'react';
+import Progressbar from './Progressbar';
 
-
-function Categorie({name, count, showItems}){
+function Categorie({name, count, showCategorie}){
     var todo = count(name)[0];
-    console.log("todo:"+ todo);
     var total = count(name)[1];
-    var progressbar = (100-(todo/total)*100).toString();
-    console.log(progressbar);
-
-    var progressStyle = {
-        width: progressbar+"%",
-        }
-
+    var progress = Math.round(100-(todo/total)*100)
 
     
     return(
           
-        <div className={`categorie `} onClick={showItems(name)} >
-            <h2>{name} - <span className={"count "+ name} > {todo} </span></h2>
-            <div className={"progressBar "}>
-                <div className={"progressBar" + name} style={progressStyle}>
-                </div>
+        <div className={`categorie `} onClick={showCategorie} name={name}>
+            <h2>{name} - <span className={"count "+ name} > {progress}% </span>afgerond </h2>
+            <Progressbar progress={progress} name={name}/>
             </div>
-        </div> 
     )
 
 }

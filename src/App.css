@@ -1,7 +1,6 @@
 /*Algemeen */
 .App {
     font-family: 'Raleway', sans-serif;
-    font-size: 24px;
     display: block;
     width: 80%;
     margin: 10px auto 100px;
@@ -18,6 +17,13 @@ h1 {
     padding: 20px;
     text-align: center;
 }
+
+h2{
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: lighter;
+    margin: 0px;
+ }
 
 button, select {
     color: black;
@@ -46,43 +52,21 @@ footer {
 
 
 
-
 /* Form */
 .todoForm {
     display: block;
     position: relative;
-    padding: 10px 0 10px 40px;
-    height: 80px;
+    margin-left: 5px;
 
 }
 
     .todoForm input {
-        width: 70%;
-        font-size: 18px;
-        line-height: 18px;
-        height: 20px;
         padding: 10px;
         border: 1px solid #dadada;
         border-radius: 6px;
         color: #888;
     }
 
-    .todoForm button {
-        width: 40px;
-        height: 40px;
-        padding: 5px;
-        position: absolute;
-        right: 5px;
-        border-radius: 6px;
-
-    }
-
-    .todoForm button:hover {
-        /*position: relative;*/
-        cursor: pointer;
-        background-color:#dadada ;
-        color: black;
-    }
 
     #errorMessage{
         font-size: 15px;
@@ -105,9 +89,13 @@ footer {
 
 /*ToDo lijst*/
 .todoList{
-    width: 85%;
-    height: 80%;
     margin: 5%;
+    position: relative;
+}
+
+.todoList ul{
+    width: inherit;
+    height: 100%;
     background-color: #ffffff;
     border: 0.5px solid #dadada ;
     border-radius: 10px;
@@ -117,11 +105,11 @@ footer {
    display: block ;
    position: relative; 
    height: 30px;
-   padding: 10px 0 10px 0px;
-   margin:  0px 20px 0px 0px ;
    text-transform: capitalize;
 
 }
+
+
 
 .todoList li:hover {
         cursor: pointer;
@@ -153,16 +141,6 @@ footer {
     color:#204969;
 }
 
-   /* Filter*/
-.filters{
-    position: relative;
-    text-align: center;
-    margin: 20px;
-}
-.filters div{
-    display: inline-block;
-    margin: 5px;
-}
 
  /* Categorie*/
  .categories{
@@ -176,10 +154,6 @@ footer {
  }
 
  .categorie{
-     position: relative;
-     display: inline-block;
-     width: 40%;
-     height: 30%;
      margin: 5% 5% 5% 0% ;
      padding: 5% 2% 5% 2% ;
      border: 0.5px solid #dadada ;
@@ -192,13 +166,10 @@ footer {
  .categorie:hover {
      background-color: #FFF7F7;
      cursor: pointer;
-
-
  }
 
  .categorie h2{
     display: inline-block;
-    font-size: 18px;
     text-transform: capitalize;
     font-weight: lighter;
  }
@@ -229,4 +200,139 @@ footer {
     border-radius: 10px;
  }
 
+ .selected{
+     background-color: #FFF7F7;
+ }
 
+ #buttonDelete{
+     position: absolute;
+     bottom: 10px;
+     right: 5px;;
+ }
+
+ @media only screen and (max-width: 768px) {
+    .App {
+        font-size: 18px;
+    }
+   
+    /* Form */
+    .todoForm {
+        padding: 0px 0px 0px 5px;
+        height: 100px;
+ 
+    }
+    
+        .todoForm input {
+            width: 40%;
+            font-size: 16px;
+            line-height: 16px;
+            height: 16px;
+        }
+    
+        .todoForm button {
+            width: 40px;
+            height: 40px;
+            padding: 5px;
+            position: absolute;
+            right: 45%;
+            bottom: 0px;
+            border-radius: 6px;
+    
+        }
+        
+    
+    /*ToDo lijst*/
+
+    
+    .todoList ul{
+        padding: 20px 0px 80px 20px;
+        margin: 0px;
+    }
+    .todoList li {
+       padding: 5px 0 5px 0px;
+       margin:  0px 5px 0px 0px ;    
+    }
+    
+    
+     /* Categorie*/
+     .categorie{
+         position: relative;
+         display: block;
+         width: 100%;
+         height: 30%;
+     }
+    
+    
+     .categorie h2{
+        font-size: 16px;
+     }
+    
+     .count{
+         font-size: 16px;
+     }
+    
+
+  }
+  
+  
+  @media only screen and (min-width: 768px) {
+    .App {
+        font-size: 24px;
+    }
+       
+    
+    /* Form */
+    .todoForm {
+        padding: 10px 0 10px 40px;
+        height: 80px;
+    }
+    
+        .todoForm input {
+            width: 70%;
+            font-size: 18px;
+            line-height: 18px;
+            height: 20px;
+         }
+    
+        .todoForm button {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            padding: 5px;
+            right: 5px;
+            border-radius: 6px;
+        }
+
+    
+    /*ToDo lijst*/
+
+    .todoList ul{
+        padding: 20px 0px 20px 20px;
+        margin: 0px;
+    }
+    .todoList li {
+       padding: 10px 0 10px 0px;
+       margin:  0px 20px 0px 0px ;
+
+    }
+
+     /* Categorie*/
+     
+     .categorie{
+         position: relative;
+         display: inline-block;
+         width: 40%;
+         height: 30%;
+ 
+     }
+    
+    
+     .categorie h2{
+        font-size: 18px;
+     }
+    
+     .count{
+         font-size: 26px;
+     }
+
+  }

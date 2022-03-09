@@ -31,9 +31,10 @@ const ToDoForm = ({ addTask }) => {
     return (
         <form onSubmit={handleSubmit} className='todoForm'>
             <input value={userInput} type="text" onChange={handleChange} placeholder="Nieuwe to do" />
-            <select  value={categorie}onChange={handleChange} name="categorie">
+            <select  value={categorie}  name="categorie">
+            <option value="werk">Werk</option>
                 <option value="privé">Privé</option>
-                <option value="werk">Werk</option>
+                
             </select>
 
             <button> <i className="fa-solid fa-plus  fa-2x"></i></button>

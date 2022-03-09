@@ -1,37 +1,43 @@
 import React from 'react';
 import ToDo from './Todo';
-import Categorie from './Categorie';
+import ButtonDelete from './ButtonDelete';
 
-function ToDoList({ toDoList, handleToggle, deleteToDo, count, showItems}) {
-    var list = toDoList.map(todo => {
-        return (
-            <li key={todo.id}>
-                <ToDo todo={todo} handleToggle={handleToggle} deleteToDo={deleteToDo} />
-            </li>
-        )
-    });
+
+function ToDoList({ toDoList, handleToggle, deleteToDo, show}) {
+    var list;
+    if(show === "all"){
+        list = toDoList.map(todo => {
+            return (
+                <li key={todo.id}>
+                    <ToDo todo={todo} handleToggle={handleToggle} />
+                </li>
+            )
+        });
+    }
+    else{
+        list = toDoList.map(todo => {
+            if(todo.categorie === show){
+                return (
+                    <li key={todo.id}>
+                        <ToDo todo={todo} handleToggle={handleToggle}/>
+                    </li>
+                )
+            }
+            
+        });
+    }
 
     
-    return (
-        <div>
-            <div className="categories">
-                <Categorie name="privé" count={count} showItems={showItems}/>
-                <Categorie name="werk" count={count} showItems={showItems}/>
-            </div>
-
-
+    
+    return (                   
             <div className='todoList'>
+            <ButtonDelete show={show} deleteToDo={deleteToDo}/>
+            <h2>To do's:</h2>
                 <ul>
                     {list}
-                </ul>
-
-                <div>
-                <button onClick={deleteToDo}>Lijstje opkuisen</button>
-            </div>
-            </div>
-
-           
+                </ul>           
         </div>
+
     );
 };
 

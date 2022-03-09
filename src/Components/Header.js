@@ -12,14 +12,6 @@ const Header =() => {
 
 
 
-const Footer = () => {
-    const author = 'Michal Davidse';
-    const date = new Date().getFullYear();
 
-   return (<footer id="footer"> &copy; {author} - {date}
-      </footer>);
-    
-}
-
-export { Header, Footer, };
+export default Header ;
 
