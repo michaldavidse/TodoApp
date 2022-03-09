@@ -10,12 +10,12 @@ const ToDoForm = ({ addTask }) => {
         message.classList.remove("visible");
         message.classList.add("hidden");
         setUserInput(event.currentTarget.value);
-        setCategorie(event.currentTarget.nextSibling.value);
+        setCategorie(document.getElementById("categorie").value);
     }
 
     function handleSubmit(event) {
         event.preventDefault();
-        if (userInput.trim().length === 0) {
+        if (userInput.trim().length == 0) {
             var message = document.getElementById("errorMessage");
             message.classList.remove("hidden");
             message.classList.add("visible");
@@ -30,8 +30,8 @@ const ToDoForm = ({ addTask }) => {
 
     return (
         <form onSubmit={handleSubmit} className='todoForm'>
-            <input value={userInput} type="text" onChange={handleChange} placeholder="Nieuwe to do" />
-            <select  value={categorie}  name="categorie">
+            <input id="input" value={userInput} type="text" onChange={handleChange} placeholder="Nieuwe to do" />
+            <select id="categorie" value={categorie} onChange={handleChange} name="categorie">
             <option value="werk">Werk</option>
                 <option value="privé">Privé</option>
                 
