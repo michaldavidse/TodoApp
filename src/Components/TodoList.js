@@ -23,7 +23,9 @@ function ToDoList({ toDoList, handleToggle, deleteToDo, show}) {
                     </li>
                 )
             }
-            
+            else{
+                return null;
+            }            
         });
     }
 
