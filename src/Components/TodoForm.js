@@ -15,7 +15,7 @@ const ToDoForm = ({ addTask }) => {
 
     function handleSubmit(event) {
         event.preventDefault();
-        if (userInput.trim().length == 0) {
+        if (userInput.trim().length === 0) {
             var message = document.getElementById("errorMessage");
             message.classList.remove("hidden");
             message.classList.add("visible");

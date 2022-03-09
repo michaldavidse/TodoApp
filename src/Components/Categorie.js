@@ -1,4 +1,4 @@
-import React, { useState, forceUpdate } from 'react';
+import React from 'react';
 import Progressbar from './Progressbar';
 
 

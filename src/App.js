@@ -41,6 +41,7 @@ function App() {
     function handleToggle(id){
         let todoListCopy = toDoList.map(todo => {
             return (
+                // eslint-disable-next-line
                 todo.id == id ? { ...todo, complete: !todo.complete } : { ...todo}
                 );
     
@@ -50,6 +51,7 @@ function App() {
 
     function deleteToDo(){
         let todoListCopy = [...toDoList];
+        // eslint-disable-next-line
         if(show=="all"){
             todoListCopy = todoListCopy.filter(todo => !todo.complete);
         }
@@ -58,6 +60,7 @@ function App() {
     }
 
     function count(categorie){
+        // eslint-disable-next-line
         let array = toDoList.filter(todo => todo.categorie == categorie);
         let arrayCategorieTotal = array.length;
         let arrayCategorieToDo = array.filter(todo=> !todo.complete).length;
