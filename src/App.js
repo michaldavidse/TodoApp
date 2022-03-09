@@ -41,7 +41,7 @@ function App() {
     function handleToggle(id){
         let todoListCopy = toDoList.map(todo => {
             return (
-                todo.id == id ? { ...todo, complete: !todo.complete } : { ...todo}
+                todo.id === id ? { ...todo, complete: !todo.complete } : { ...todo}
                 );
     
          });
@@ -50,7 +50,7 @@ function App() {
 
     function deleteToDo(){
         let todoListCopy = [...toDoList];
-        if(show=="all"){
+        if(show==="all"){
             todoListCopy = todoListCopy.filter(todo => !todo.complete);
         }
         
@@ -58,7 +58,7 @@ function App() {
     }
 
     function count(categorie){
-        let array = toDoList.filter(todo => todo.categorie == categorie);
+        let array = toDoList.filter(todo => todo.categorie === categorie);
         let arrayCategorieTotal = array.length;
         let arrayCategorieToDo = array.filter(todo=> !todo.complete).length;
         return [arrayCategorieToDo,arrayCategorieTotal];
