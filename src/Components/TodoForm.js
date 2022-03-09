@@ -9,7 +9,7 @@ const ToDoForm = ({ addTask }) => {
         var message = document.getElementById("errorMessage");
         message.classList.remove("visible");
         message.classList.add("hidden");
-        setUserInput(event.currentTarget.value);
+        setUserInput(event.getElementById("input").value);
         setCategorie(document.getElementById("categorie").value);
     }
 
