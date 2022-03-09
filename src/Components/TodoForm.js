@@ -31,7 +31,7 @@ const ToDoForm = ({ addTask }) => {
     return (
         <form onSubmit={handleSubmit} className='todoForm'>
             <input id="input" value={userInput} type="text" onChange={handleChange} placeholder="Nieuwe to do" />
-            <select id="categorie" name="categorie">
+            <select id="categorie" onChange={handleChange} name="categorie">
                 <option value="werk">Werk</option>
                 <option value="privé">Privé</option>
                 
